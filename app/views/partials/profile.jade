@@ -1,0 +1,8 @@
+div(ng-include='\'partials/navbar\'')
+
+h1
+  | Welcome, {{ currentUser.name }}!
+p 
+  | Here are your tweets:
+
+div(ng-include='\'partials/tweets-list\'')

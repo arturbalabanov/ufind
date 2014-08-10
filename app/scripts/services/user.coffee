@@ -13,4 +13,3 @@ angular.module("ufindApp")
         method: "GET"
         params:
           id: "me"
-

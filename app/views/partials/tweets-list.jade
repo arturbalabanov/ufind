@@ -1,0 +1,12 @@
+.tweets-list-wrapper
+  .panel.panel-primary
+    .panel-heading Tweets
+    ul.list-group.tweets-list
+      li.list-group-item.tweets-list-item(ng-repeat='tweet in tweets | orderBy: "created": true')
+        .row
+          .col-sm-12
+            span.label.label-primary {{ tweet.user.name }}
+            |  {{ tweet.created | date:'dd MMM yyyy HH:mm:ss' }}
+        .row
+          .col-sm-12
+            b {{ tweet.body }}

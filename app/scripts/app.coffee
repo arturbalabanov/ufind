@@ -4,23 +4,27 @@ angular.module('ufindApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ngAnimate'
 ])
   .config ($routeProvider, $locationProvider, $httpProvider) ->
     $routeProvider
       .when '/',
         templateUrl: 'partials/main'
         controller: 'MainCtrl'
-      
       .when '/login',
         templateUrl: 'partials/login'
         controller: 'LoginCtrl'
-      .when '/signup', 
+      .when '/signup',
         templateUrl: 'partials/signup'
         controller: 'SignupCtrl'
       .when '/settings',
         templateUrl: 'partials/settings'
         controller: 'SettingsCtrl'
+        authenticate: true
+      .when '/profile',
+        templateUrl: 'partials/profile'
+        controller: 'ProfileCtrl'
         authenticate: true
       .otherwise
         redirectTo: '/'
