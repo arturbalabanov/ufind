@@ -10,6 +10,7 @@ describe('User Model', function() {
   before(function(done) {
     user = new User({
       provider: 'local',
+      username: 'fakeUser',
       name: 'Fake User',
       email: 'test@test.com',
       password: 'password'
@@ -36,6 +37,22 @@ describe('User Model', function() {
     user.save();
     var userDup = new User(user);
     userDup.save(function(err) {
+      should.exist(err);
+      done();
+    });
+  });
+
+  it('should fail when saving without an username', function(done) {
+    user.username = '';
+    user.save(function(err) {
+      should.exist(err);
+      done();
+    });
+  });
+
+  it('should fail when saving with an invalid username', function(done) {
+    user.username = 'asddas1asd!22';
+    user.save(function(err) {
       should.exist(err);
       done();
     });
