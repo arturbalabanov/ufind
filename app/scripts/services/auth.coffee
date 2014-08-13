@@ -17,7 +17,7 @@ angular.module('ufindApp')
     login: (user, callback) ->
       cb = callback or angular.noop
       Session.save(
-        email: user.email
+        username: user.username
         password: user.password
       , (user) ->
         $rootScope.currentUser = user

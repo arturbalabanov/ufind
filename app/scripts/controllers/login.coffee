@@ -10,7 +10,7 @@ angular.module('ufindApp')
       
       if form.$valid
         Auth.login(
-          email: $scope.user.email
+          username: $scope.user.username
           password: $scope.user.password
         )
         .then ->
