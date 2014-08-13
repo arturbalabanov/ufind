@@ -87,6 +87,10 @@ module.exports = function (grunt) {
           livereload: true,
           nospawn: true //Without this option specified express won't be reloaded
         }
+      },
+      testServer: {
+        files: ['test/server/**/*.js'],
+        tasks: ['test:server']
       }
     },
 
@@ -451,7 +455,9 @@ module.exports = function (grunt) {
 
     mochaTest: {
       options: {
-        reporter: 'spec'
+        reporter: 'spec',
+        // slow: 200,
+        // timeout: 1000
       },
       src: ['test/server/**/*.js']
     },
