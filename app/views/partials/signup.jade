@@ -6,6 +6,14 @@ div(ng-include='\'partials/navbar.html\'')
     
   .col-sm-12
     form.form(name='form', ng-submit='register(form)', novalidate='')
+      .form-group(ng-class='{ \'has-success\': form.username.$valid && submitted, \'has-error\': form.username.$invalid && submitted }')
+        label Username
+        input.form-control(type='text', name='username', ng-model='user.username', required='', mongoose-error='')
+        p.help-block(ng-show='form.username.$error.required && submitted')
+          | What's your username?
+        p.help-block(ng-show='form.username.$error.mongoose')
+          | {{ errors.username }}
+
       .form-group(ng-class='{ \'has-success\': form.name.$valid && submitted, \'has-error\': form.name.$invalid && submitted }')
         label Name
         input.form-control(type='text', name='name', ng-model='user.name', required='')
