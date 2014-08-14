@@ -6,6 +6,7 @@
         .row
           .col-sm-12
             span.label.label-primary {{ tweet.user.name }}
+            span.label.label-info @{{ tweet.user.username }}
             |  {{ tweet.created | date:'dd MMM yyyy HH:mm:ss' }}
         .row
           .col-sm-12
