@@ -2,6 +2,8 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 @import '_bootstrap_customize';
 
+@import '_profile_styles';
+
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 
 @import '_animations';
@@ -92,4 +94,8 @@ body {
     .jumbotron {
         border-bottom: 0;
     }
+}
+
+textarea.new-tweet-body {
+  resize: vertical;
 }

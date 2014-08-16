@@ -9,7 +9,7 @@ angular.module("ufindApp")
         method: "PUT"
         params: {}
 
-      get:
+      getCurrent:
         method: "GET"
         params:
           id: "me"

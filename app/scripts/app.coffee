@@ -22,7 +22,7 @@ angular.module('ufindApp', [
         templateUrl: 'partials/settings'
         controller: 'SettingsCtrl'
         authenticate: true
-      .when '/profile',
+      .when '/user/:username',
         templateUrl: 'partials/profile'
         controller: 'ProfileCtrl'
         authenticate: true

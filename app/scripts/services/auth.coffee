@@ -86,7 +86,7 @@ angular.module('ufindApp')
     @return {Object} user
     ###
     currentUser: ->
-      User.get()
+      User.getCurrent()
 
     
     ###

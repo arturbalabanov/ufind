@@ -1,8 +1,7 @@
 div(ng-include='\'partials/navbar\'')
 
-h1
-  | Welcome, {{ currentUser.name }}!
-p 
-  | Here are your tweets:
+h3
+  | This is the profile of {{ user.name }}
+  small  @{{ user.username }}
 
 div(ng-include='\'partials/tweets-list\'')
