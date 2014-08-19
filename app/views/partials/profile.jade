@@ -4,10 +4,10 @@ h3
   | This is the profile of {{ user.name }}
   small  @{{ user.username }}
   |  
-  a.btn.btn-xs.btn-success(ng-click='follow()' ng-show='!following')
+  a.btn.btn-xs.btn-success(ng-click='follow()' ng-hide='following')
     span.glyphicon.glyphicon-plus
     |  Follow
-  a.btn.btn-xs.btn-danger(ng-click='unfollow()' ng-show='following')
+  a.btn.btn-xs.btn-danger(ng-click='follow()' ng-show='following')
     span.glyphicon.glyphicon-minus
     |  Unfollow
 

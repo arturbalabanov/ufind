@@ -9,12 +9,9 @@ angular.module('ufindApp')
       $http.get("/api/tweets/user/#{user._id}").success (tweets) ->
         $scope.tweets = tweets
 
-      $scope.following = false
-
-      # TODO: To get this actually work
-      $scope.unfollow = ->
-        $scope.following = false
+      $http.get("/api/users/follow/#{user._id}").success (following) ->
+        $scope.following = following
 
       $scope.follow = ->
-        $http.post("/api/users/follow/#{user._id}").success ->
-          $scope.following = true
+        $http.post("/api/users/follow/#{user._id}").success (following) ->
+          $scope.following = following
