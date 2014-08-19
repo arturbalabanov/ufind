@@ -10,5 +10,5 @@ angular.module('ufindApp')
       $http.post('/api/tweets', newTweet).success (tweet) ->
         $scope.tweets.push tweet
  
-    $http.get('/api/tweets').success (tweets) ->
+    $http.get('/api/users/follow/getTweets').success (tweets) ->
       $scope.tweets = tweets
