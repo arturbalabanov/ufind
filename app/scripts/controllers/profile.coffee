@@ -6,6 +6,9 @@ angular.module('ufindApp')
     $http.get("/api/users/username/#{$routeParams.username}").success (user) ->
       $scope.user = user
 
+      $http.get("/api/users/me").success (me) ->
+        $scope.isMe = user._id is me._id
+
       $http.get("/api/tweets/user/#{user._id}").success (tweets) ->
         $scope.tweets = tweets
 

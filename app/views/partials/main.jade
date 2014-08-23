@@ -1,18 +1,8 @@
 div(ng-include='\'partials/navbar\'')
 
-.row(ng-hide='currentUser')
+.row(ng-if='!currentUser')
   .col-sm-12
     h2 Welcome to ufind
 
-.row(ng-show='currentUser')
-  .col-sm-4
-    h3 Add new tweet
-    form.new-tweet-form
-      textarea.form-control.new-tweet-body(ng-model='newTweetBody' rows="3")
-      br
-      a.btn.btn-primary(type="submit" ng-click='submitNewTweet()')
-        span.glyphicon.glyphicon-plus
-        |  Tweet
-
-  .col-sm-8
-    div(ng-include='\'partials/tweets-list\'')
+.row(ng-if='currentUser')
+  div(ng-include='\'partials/dashboard\'')

@@ -1,0 +1,19 @@
+div(ng-include='\'partials/navbar\'')
+
+.row
+  .col-sm-12
+    h3 Search results for 
+      strong {{ query }}
+      | :
+.row
+  .col-sm-12
+    .panel.panel-primary
+      .panel-heading Results
+      ul.list-group.tweets-list
+        li.list-group-item.tweets-list-item(ng-repeat='user in searchReasults')
+          .row
+            .col-sm-12
+              span.label.label-primary {{ user.name }}
+              |  
+              span.label.label-info.username-label 
+                a(ng-href='/user/{{ user.username }}') @{{ user.username }}

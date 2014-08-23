@@ -5,13 +5,17 @@ angular.module('ufindApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ngAnimate'
+  'ngAnimate',
+  'ui.bootstrap'
 ])
   .config ($routeProvider, $locationProvider, $httpProvider) ->
     $routeProvider
       .when '/',
         templateUrl: 'partials/main'
         controller: 'MainCtrl'
+      .when '/search/:query',
+        templateUrl: 'partials/search'
+        controller: 'SearchCtrl'
       .when '/login',
         templateUrl: 'partials/login'
         controller: 'LoginCtrl'

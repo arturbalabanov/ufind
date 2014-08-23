@@ -11,12 +11,14 @@ angular.module('ufindApp')
       link: '/settings'
     ]
 
-    Auth.currentUser().$promise.then (user) ->
-      if user.success isnt false
-        $scope.menu.push
-          title: 'Profile'
-          link: "/user/#{user.username}"
-    
+    if $scope.currentUser?
+      $scope.menu.push
+        title: 'Profile'
+        link: "/user/#{$scope.currentUser.username}"
+
+    $scope.search = (query) ->
+      $location.path "/search/#{$scope.searchUserQuery}"
+
     $scope.logout = ->
       Auth.logout().then ->
         $location.path "/"
