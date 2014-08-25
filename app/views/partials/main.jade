@@ -1,8 +1,7 @@
 div(ng-include='\'partials/navbar\'')
 
-.row(ng-if='!currentUser')
-  .col-sm-12
-    h2 Welcome to ufind
+div(ng-if='currentUser')
+  div(ng-include='\'partials/main/authenticated\'')
 
-.row(ng-if='currentUser')
-  div(ng-include='\'partials/dashboard\'')
+div(ng-if='!currentUser')
+  div(ng-include='\'partials/main/unauthenticated\'')
