@@ -3,9 +3,11 @@
   form.new-tweet-form
     textarea.form-control.new-tweet-body(ng-model='newTweetBody' rows="3")
     br
-    a.btn.btn-primary(type="submit" ng-click='submitNewTweet()')
+    a.btn.btn-primary(ng-click='submitNewTweet()')
       span.glyphicon.glyphicon-plus
       |  Tweet
 
 .col-sm-8
+  alert(ng-repeat="message in messages" type="{{ message.type }}" close="closeMessage($index)")
+    | {{ message.body }}
   div(ng-include='\'partials/tweets-list\'')
