@@ -12,6 +12,9 @@ nav.navbar.navbar-default(role="navigation" ng-controller='NavbarCtrl')
 
     .collapse.navbar-collapse#navbar-collapse
       ul.nav.navbar-nav
+        // It's a special case
+        li(ng-class='{active: isActive("/user/{{ currentUser.username }}")}' ng-show='currentUser')
+          a(ng-href='/user/{{ currentUser.username }}') Profile
         li(ng-repeat='item in menu' ng-class='{active: isActive(item.link)}')
           a(ng-href='{{item.link}}') {{item.title}}
 

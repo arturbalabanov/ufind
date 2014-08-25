@@ -4,17 +4,9 @@ angular.module('ufindApp')
   .controller 'NavbarCtrl', ($scope, $location, Auth) ->
     
     $scope.menu = [
-      title: 'Home'
-      link: '/'
-    ,
       title: 'Settings'
       link: '/settings'
     ]
-
-    if $scope.currentUser?
-      $scope.menu.push
-        title: 'Profile'
-        link: "/user/#{$scope.currentUser.username}"
 
     $scope.search = (query) ->
       $location.path "/search/#{$scope.searchUserQuery}"
