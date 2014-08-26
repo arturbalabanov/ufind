@@ -1,3 +1,87 @@
-.row(ng-controller="MainUnauthCtrl")
-  .col-sm-12
-    h2 Welcome to {{ siteName }}!
+div(ng-controller='MainUnauthCtrl')
+  header.jumbotron.hero-spacer
+    h1 Welcome to ufind!
+    // TODO: better message
+    p
+      | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      | Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt
+      | odit vero aliquid similique quaerat nam nobis illo
+      | aspernatur vitae fugiat numquam repellat.
+    p
+      a.btn.btn-success.btn-large(href="https://github.com/arturbalabanov/ufind")
+        span.glyphicon.glyphicon-save
+        |  Source code
+  
+  hr
+
+  .row
+    .col-lg-12
+      h2 Used technologies
+  
+  .row.text-center
+    .col-md-3.col-sm6.hero-feature
+      .thumbnail
+        img(src="/images/mongodb.png" alt="MongoDB logo" width="200" height="200")
+        .caption
+          h3 MongoDB
+          p
+            | MongoDB is the leading NoSQL database, empowering
+            | businesses to be more agile and scalable. It
+            | eschews the traditional table-based relational
+            | database structure in favor of JSON-like documents with
+            | dynamic schemas, making the integration of data in
+            | certain types of applications easier and faster.
+          p
+            a.btn.btn-default(href="http://mongodb.org/") More Info
+
+    .col-md-3.col-sm6.hero-feature
+      .thumbnail
+        img(src="/images/express.png" alt="Express logo" width="200" height="200")
+        .caption
+          h3 Express
+          p
+            | Express is a minimal and flexible node.js web
+            | application framework, providing a robust set
+            | of features for building single and multi-page,
+            | and hybrid web applications. Express provides a
+            | thin layer of features fundamental to any web
+            | application, without obscuring features that
+            | you know and love in node.js
+          p
+            a.btn.btn-default(href="http://expressjs.com/") More Info
+
+    .col-md-3.col-sm6.hero-feature
+      .thumbnail
+        img(src="/images/angularjs.png" alt="AngularJS logo" width="200" height="200")
+        .caption
+          h3 AngularJS
+          p
+            | AngularJS is an open-source MVC web application,
+            | maintained by Google and community,
+            | framework, maintained by Google and community,
+            | that assists with creating single-page applications.
+            | It provides two way data-binding, extending the HTML
+            | syntax dependency injection etc.
+          p
+            a.btn.btn-default(href="http://nodejs.org/") More Info
+
+    .col-md-3.col-sm6.hero-feature
+      .thumbnail
+        img(src="/images/nodejs.png" alt="Node.js logo" width="200" height="200")
+        .caption
+          h3 Node.js
+          p
+            | Node.js is a platform built on Chrome's JavaScript runtime
+            | for easily building fast, scalable network applications.
+            | Node.js uses an event-driven, non-blocking I/O model that
+            | makes it lightweight and efficient, perfect for data-intensive
+            | real-time applications that run across distributed devices.
+          p
+            a.btn.btn-default(href="http://angularjs.org/") More Info
+
+  hr
+
+  footer
+    .row
+      .col-lg-12
+        p Copyright &copy; Artur Balabanov 2014
