@@ -5,7 +5,12 @@ angular.module('ufindApp')
 
     $http.get("/api/users/username/#{$routeParams.username}").success (user) ->
       $scope.user = user
+      if user.avatar?
+        $scope.avatarUrl = "/images/avatars/#{user.avatar}"
+      else
+        $scope.avatarUrl = "/images/default-avatar.png"
 
+      # TODO: use $scope.currentUser
       $http.get("/api/users/me").success (me) ->
         $scope.isMe = user._id is me._id
 

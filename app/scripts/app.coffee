@@ -6,7 +6,8 @@ angular.module('ufindApp', [
   'ngSanitize',
   'ngRoute',
   'ngAnimate',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'angularFileUpload'
 ])
   .config ($routeProvider, $locationProvider, $httpProvider) ->
     $routeProvider

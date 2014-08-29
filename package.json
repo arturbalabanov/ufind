@@ -9,7 +9,8 @@
     "passport": "~0.2.0",
     "passport-local": "~0.1.6",
     "jade": "~1.2.0",
-    "async": "~0.9.0"
+    "async": "~0.9.0",
+    "gm": "~1.16.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

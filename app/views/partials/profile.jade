@@ -9,4 +9,8 @@ h3
     span.glyphicon.glyphicon-minus
     |  Unfollow
 
-div(ng-include='\'partials/tweets-list\'')
+.row
+  .col-sm-3
+    img.img-thumbnail(ng-src="{{ avatarUrl }}") 
+  .col-sm-9
+    div(ng-include='\'partials/tweets-list\'')
