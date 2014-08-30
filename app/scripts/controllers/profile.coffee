@@ -13,6 +13,7 @@ angular.module('ufindApp')
       # TODO: use $scope.currentUser
       $http.get("/api/users/me").success (me) ->
         $scope.isMe = user._id is me._id
+        console.log $scope.isMe
 
       $http.get("/api/tweets/user/#{user._id}").success (tweets) ->
         $scope.tweets = tweets

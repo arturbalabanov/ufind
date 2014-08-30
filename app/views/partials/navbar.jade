@@ -41,9 +41,8 @@ nav.navbar.navbar-default(role="navigation" ng-controller='NavbarCtrl')
               .navbar-user-info
                 .row
                   .col-lg-4
-                    p.text-center
-                      img.img-thumbnail(ng-if="currentUser.avatar" ng-src="/images/avatars/{{ currentUser.avatar }}")
-                      img.img-thumbnail(ng-if="!currentUser.avatar" ng-src="/images/default-avatar.png")
+                    img.img-thumbnail.center-block(ng-if="currentUser.avatar" ng-src="/images/avatars/{{ currentUser.avatar }}")
+                    img.img-thumbnail.center-block(ng-if="!currentUser.avatar" ng-src="/images/default-avatar.png")
                   .col-lg-8
                     p.text-left
                       strong {{ currentUser.name }}

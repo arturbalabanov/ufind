@@ -2,15 +2,16 @@ h3
   | This is the profile of {{ user.name }}
   small  @{{ user.username }}
   |  
-  a.btn.btn-xs.btn-success(ng-click='follow()' ng-hide='following')
-    span.glyphicon.glyphicon-plus
-    |  Follow
-  a.btn.btn-xs.btn-danger(ng-click='follow()' ng-show='following')
-    span.glyphicon.glyphicon-minus
-    |  Unfollow
+  .follow-links(ng-if='!isMe')
+    a.btn.btn-xs.btn-success(ng-click='follow()' ng-hide='following')
+      span.glyphicon.glyphicon-plus
+      |  Follow
+    a.btn.btn-xs.btn-danger(ng-click='follow()' ng-show='following')
+      span.glyphicon.glyphicon-minus
+      |  Unfollow
 
 .row
   .col-sm-3
-    img.img-thumbnail(ng-src="{{ avatarUrl }}") 
+    img.img-thumbnail.center-block(ng-src="{{ avatarUrl }}") 
   .col-sm-9
     div(ng-include='\'partials/tweets-list\'')

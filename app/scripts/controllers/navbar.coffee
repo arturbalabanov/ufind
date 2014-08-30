@@ -11,11 +11,6 @@ angular.module('ufindApp')
     $scope.search = (query) ->
       $location.path "/search/#{$scope.searchUserQuery}"
 
-    if $scope.currentUser.avatar?
-      $scope.currentUserAvatarUrl = "/images/avatars/#{$scope.currentUser.avatar}"
-    else
-      $scope.currentUserAvatarUrl = "/images/default-avatar.png"
-
     $scope.logout = ->
       Auth.logout().then ->
         $location.path "/"
