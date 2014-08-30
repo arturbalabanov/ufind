@@ -24,10 +24,36 @@ nav.navbar.navbar-default(role="navigation" ng-controller='NavbarCtrl')
           span.input-group-btn
             button.btn.btn-primary(type="submit") Go!
 
-      .nav.navbar-nav.navbar-right
+      ul.nav.navbar-nav.navbar-right
         span.no-user-buttons(ng-hide='currentUser')
           a.btn.btn-success.navbar-btn(href='/login') Login
           |  
           a.btn.btn-primary.navbar-btn(href='/signup') Sign up
-        span.user-buttons(ng-show='currentUser')
-          a.btn.btn-danger.navbar-btn(href='' ng-click='logout()') Logout
+        li.dropdown(ng-show='currentUser')
+          a.dropdown-toggle(data-toggle="dropdown")
+            span.glyphicon.glyphicon-user
+            strong 
+              |  {{ currentUser.username }}
+              |  
+            span.glyphicon.glyphicon-chevron-down
+          ul.dropdown-menu
+            li
+              .navbar-user-info
+                .row
+                  .col-lg-4
+                    p.text-center
+                      img.img-thumbnail(ng-if="currentUser.avatar" ng-src="/images/avatars/{{ currentUser.avatar }}")
+                      img.img-thumbnail(ng-if="!currentUser.avatar" ng-src="/images/default-avatar.png")
+                  .col-lg-8
+                    p.text-left
+                      strong {{ currentUser.name }}
+                      p.text-left.small {{ currentUser.email }}
+                      p.text-left
+                        a.btn.btn-primary.btn-block.btn-sm(ng-href='/settings') Settings
+            li.divider  
+            li
+              .navbar-user-info.navbar-user-info-session
+                .row
+                  .col-lg-12
+                    p
+                      a.btn.btn-danger.btn-block(ng-click='logout()') Logout
