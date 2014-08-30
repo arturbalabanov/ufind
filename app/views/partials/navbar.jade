@@ -1,3 +1,6 @@
+script(type="text/ng-template" id="searchResultsPopup.html").
+  <a href="/user/{{ match.label }}">{{ match.label }}</a>
+
 nav.navbar.navbar-default(role="navigation" ng-controller='NavbarCtrl')
   .container-fluid
     .navbar-header
@@ -20,9 +23,11 @@ nav.navbar.navbar-default(role="navigation" ng-controller='NavbarCtrl')
 
       form.navbar-form.navbar-left(role="search" ng-submit='search(searchUserQuery)')
         .input-group
-          input.form-control(type="text" placeholder="Search user" ng-model='searchUserQuery')
+          input.form-control(type="text" placeholder="Search for user" ng-model='searchUserQuery' typeahead='user for user in getUsers($viewValue)' typeahead-loading="loadingUsers" typeahead-template-url="searchResultsPopup.html")
           span.input-group-btn
-            button.btn.btn-primary(type="submit") Go!
+            button.btn.btn-primary(type="submit")
+              span.glyphicon.glyphicon-search(ng-show='!loadingUsers')
+              span.glyphicon.glyphicon-refresh(ng-show='loadingUsers')
 
       ul.nav.navbar-nav.navbar-right
         span.no-user-buttons(ng-hide='currentUser')
@@ -32,7 +37,7 @@ nav.navbar.navbar-default(role="navigation" ng-controller='NavbarCtrl')
         li.dropdown(ng-show='currentUser')
           a.dropdown-toggle(data-toggle="dropdown")
             span.glyphicon.glyphicon-user
-            strong 
+            strong
               |  {{ currentUser.username }}
               |  
             span.glyphicon.glyphicon-chevron-down
